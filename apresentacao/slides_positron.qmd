@@ -129,7 +129,7 @@ Algumas funcionalidades estão disponíveis no Positron, mas não no RStudio:
 ## Atalhos principais - Parte1
 
 | Comando | Windows/Linux | Mac | Descrição |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | **Executar código** | `Ctrl + Enter` | `Cmd + Enter` | Executa linha ou seleção |
 | **Command Palette** | `Ctrl + Shift + P` | `Cmd + Shift + P` | Abre paleta de todos comandos |
 | **Buscar arquivos** | `Ctrl + P` | `Cmd + P` | Busca rápida de arquivos no projeto |
@@ -139,7 +139,7 @@ Algumas funcionalidades estão disponíveis no Positron, mas não no RStudio:
 ## Atalhos Quarto e edição - Parte2
 
 | Comando | Windows/Linux | Mac | Descrição |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | **Renderizar Quarto** | `Ctrl + Shift + K` | `Cmd + Shift + K` | Renderiza documento .qmd |
 | **Inserir chunk** | `Ctrl + Alt + I` | `Cmd + Option + I` | Insere novo chunk de código |
 | **Comentar linha** | `Ctrl + Shift + C` | `Cmd + /` | Comenta ou descomenta código |
@@ -374,7 +374,7 @@ Acesse as extensões via **`Ctrl+Shift+X`** (Windows/Linux) ou **`Cmd+Shift+X`**
 
 # NÃO ACABOU🤭 {.center background-color="#224573"}
 
-![Pacote Reticulate salva vidas!](imagens/python.JPG){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="413" height="197"}
+![Pacote Reticulate salva vidas!](imagens/paste-1.png){fig-align="center" style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" width="516" height="200"}
 
 ## Prática 5: Um pé no R e outro no Python
 
