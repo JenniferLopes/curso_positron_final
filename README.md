@@ -1,5 +1,7 @@
 # Curso Positron IDE
 
+Link da apresentação: https://jenniferlopes.quarto.pub/positron-ide/#/title-slide
+
 ## O que é Positron?
 
 O **Positron** é uma IDE (Ambiente de Desenvolvimento Integrado) de última geração desenvolvida pela Posit, voltada para ciência de dados em **Python** e **R**. 
