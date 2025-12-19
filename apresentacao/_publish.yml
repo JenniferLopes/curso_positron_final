@@ -1,0 +1,4 @@
+- source: slides_positron.qmd
+  quarto-pub:
+    - id: 10b92832-32cb-473c-b534-799d9130b389
+      url: https://jenniferlopes.quarto.pub/curso_positron_rladiesgyn

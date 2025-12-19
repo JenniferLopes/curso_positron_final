@@ -1,0 +1,79 @@
+## Lista de atalhos para uso no Positron
+
+Eles facilitam a transição e continuam sendo úteis no dia a dia.
+
+### Operações básicas de arquivo
+
+| Ação | Windows/Linux | Mac |
+|:-----|:--------------|:----|
+| Salvar arquivo | `Ctrl + S` | `Cmd + S` |
+| Salvar todos os arquivos | `Ctrl + Shift + S` | `Cmd + Shift + S` |
+| Copiar | `Ctrl + C` | `Cmd + C` |
+| Colar | `Ctrl + V` | `Cmd + V` |
+| Desfazer | `Ctrl + Z` | `Cmd + Z` |
+| Refazer | `Ctrl + Shift + Z` | `Cmd + Shift + Z` |
+| Selecionar tudo | `Ctrl + A` | `Cmd + A` |
+
+### Execução de código
+
+| Ação | Windows/Linux | Mac |
+|:-----|:--------------|:----|
+| Executar linha ou seleção | `Ctrl + Enter` | `Cmd + Enter` |
+| Executar arquivo inteiro | `Ctrl + Shift + Enter` | `Cmd + Shift + Enter` |
+| Interromper execução | `Ctrl + C` | `Cmd + C` |
+
+### Navegação e arquivos
+
+| Ação | Windows/Linux | Mac |
+|:-----|:--------------|:----|
+| Abrir paleta de comandos | `Ctrl + Shift + P` | `Cmd + Shift + P` |
+| Abrir arquivo rapidamente | `Ctrl + P` | `Cmd + P` |
+| Alternar entre arquivos abertos | `Ctrl + Tab` | `Cmd + Tab` |
+| Fechar arquivo atual | `Ctrl + W` | `Cmd + W` |
+
+### Edição de código
+
+| Ação | Windows/Linux | Mac |
+|:-----|:--------------|:----|
+| Comentar ou descomentar linha | `Ctrl + Shift + C` | `Cmd + Shift + C` |
+| Formatar código | `Shift + Alt + F` | `Shift + Option + F` |
+| Duplicar linha | `Shift + Alt + Down` | `Shift + Option + Down` |
+| Mover linha para cima | `Alt + Up` | `Option + Up` |
+| Mover linha para baixo | `Alt + Down` | `Option + Down` |
+| Seleção múltipla de cursores | `Alt + Click` | `Option + Click` |
+| Adicionar cursor abaixo | `Ctrl + Alt + Down` | `Cmd + Option + Down` |
+
+### Busca e substituição
+
+| Ação | Windows/Linux | Mac |
+|:-----|:--------------|:----|
+| Buscar no arquivo | `Ctrl + F` | `Cmd + F` |
+| Buscar e substituir | `Ctrl + H` | `Cmd + H` |
+| Buscar no projeto inteiro | `Ctrl + Shift + F` | `Cmd + Shift + F` |
+
+### Terminal e console
+
+| Ação | Windows/Linux | Mac |
+|:-----|:--------------|:----|
+| Abrir ou fechar terminal integrado | `` Ctrl + ` `` | `` Cmd + ` `` |
+| Criar novo terminal | `` Ctrl + Shift + ` `` | `` Cmd + Shift + ` `` |
+
+### Layout e painéis
+
+| Ação | Windows/Linux | Mac |
+|:-----|:--------------|:----|
+| Mostrar ou ocultar barra lateral | `Ctrl + B` | `Cmd + B` |
+| Abrir explorador de arquivos | `Ctrl + Shift + E` | `Cmd + Shift + E` |
+
+### Controle de versão
+
+| Ação | Windows/Linux | Mac |
+|:-----|:--------------|:----|
+| Abrir painel de Git | `Ctrl + Shift + G` | `Cmd + Shift + G` |
+
+### Quarto e documentação
+
+| Ação | Windows/Linux | Mac |
+|:-----|:--------------|:----|
+| Renderizar documento | `Ctrl + Shift + K` | `Cmd + Shift + K` |
+| Abrir preview do Quarto | `Ctrl + Shift + P` - digitar "Quarto Preview" | `Cmd + Shift + P` - digitar "Quarto Preview" |

@@ -1,0 +1,164 @@
+---
+title: "Pinguins da Antártica: Relatório de Análise"
+author: "R-Ladies Goiânia"
+date: today
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    code-summary: "Ver código"
+    css: styles.css
+editor: visual
+---
+
+## Introdução
+
+Entre 2007 e 2009, a Dra. Kristen Gorman e sua equipe estudaram três espécies de pinguins em ilhas da Antártica. Este relatório apresenta uma análise das características físicas que distinguem cada espécie.
+
+![](lter_penguins.png){fig-align="center" width="534"}
+
+**Pergunta de pesquisa:** Será que conseguimos identificar a espécie de um pinguim apenas observando suas medidas corporais?
+
+```{r setup, message=FALSE, warning=FALSE}
+# Carregar pacotes
+library(pacman)
+
+pacman::p_load(tidyverse, here, DT)
+
+# Configurar tema dos gráficos
+theme_set(theme_classic())
+```
+
+## Dados
+
+O dataset contém informações de **pinguins** de 3 espécies diferentes, coletados em 3 ilhas da Antártica.
+
+```{r}
+# importação
+penguins <- read.csv(here("dados", "penguins.csv"))
+```
+
+```{r}
+# Visão geral
+dplyr::glimpse(penguins)
+```
+
+### Resumo por espécie
+
+```{r resumo-especies}
+penguins |> 
+  group_by(species) |> 
+  summarise(
+    `N° Pinguins` = n(),
+    `Peso Médio (g)` = round(mean(body_mass_g, na.rm = TRUE)),
+    `Nadadeira Média (mm)` = round(mean(flipper_length_mm, na.rm = TRUE))) |>
+DT::datatable()
+```
+
+::: callout-note
+## Descoberta inicial
+
+Os pinguins Gentoo são significativamente maiores que as outras duas espécies!
+:::
+
+## Análises
+
+### Relação entre nadadeira e peso
+
+Existe uma forte correlação positiva entre o comprimento da nadadeira e o peso corporal em todas as espécies.
+
+```{r grafico-nadadeira, fig.width=10, fig.height=6}
+#| message: false
+#| warning: false
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, color = species)) +
+  geom_point(size = 3, alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed") +
+  labs(
+    title = "Relação entre tamanho da nadadeira e peso corporal",
+    x = "Comprimento da nadadeira (mm)",
+    y = "Peso corporal (g)",
+    color = "Espécie", 
+    caption = "R-Ladies Goiânia, 2025.") +
+  scale_color_manual(values = c("#88398a", "#224573", "#333333")) +
+  theme_classic()
+```
+
+### Morfologia do bico: A assinatura de cada espécie
+
+O formato do bico é **único para cada espécie**, tornando possível a identificação visual.
+
+```{r grafico-bico, fig.width=10, fig.height=6}
+#| message: false
+#| warning: false
+ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, 
+                     color = species, shape = species)) +
+  geom_point(size = 3, alpha = 0.8) +
+  labs(
+    title = "Morfologia do bico por espécie",
+    x = "Comprimento do bico (mm)",
+    y = "Profundidade do bico (mm)",
+    color = "Espécie",
+    caption = "R-Ladies Goiânia, 2025.") +
+  scale_color_manual(values = c("#88398a", "#224573", "#333333")) +
+  theme_classic()
+```
+
+::: callout-important
+## Resposta à pergunta
+
+**SIM!** As espécies formam clusters distintos no gráfico de morfologia do bico:
+
+-   **Adelie**: bico curto e profundo
+-   **Chinstrap**: bico longo e profundo
+-   **Gentoo**: bico longo e raso
+:::
+
+### Dimorfismo sexual
+
+Machos são consistentemente mais pesados que fêmeas em todas as espécies estudadas.
+
+```{r grafico-dimorfismo, fig.width=10, fig.height=6}
+penguins |> 
+  filter(!is.na(sex)) |> 
+  ggplot(aes(x = species, y = body_mass_g, fill = sex)) +
+  geom_boxplot(alpha = 0.7) +
+  labs(
+    title = "Dimorfismo sexual",
+    subtitle = "Machos são mais pesados em todas as espécies",
+    x = "Espécie",
+    y = "Peso corporal (g)",
+    fill = "Sexo", 
+    caption = "R-Ladies Goiânia, 2025.") +
+  scale_fill_manual(
+    values = c("female" = "#88398a", "male" = "#224573"),
+    labels = c("Fêmea", "Macho")) +
+  theme_classic()
+```
+
+## Conclusões
+
+1.  **Gentoo são os maiores pinguins** (\~5000g), seguidos por Chinstrap e Adelie (\~3700g)
+
+2.  **Cada espécie possui morfologia de bico característica**, permitindo identificação visual
+
+3.  **Dimorfismo sexual presente** em todas as espécies, com machos sendo mais pesados
+
+4.  **Forte correlação** entre comprimento de nadadeira e peso corporal
+
+## Próximos passos
+
+-   Análise estatística (ANOVA) para confirmar diferenças significativas
+-   Modelo de machine learning para classificação
+-   Investigar diferenças entre as ilhas
+
+------------------------------------------------------------------------
+
+::: callout-tip
+## Sobre os Dados
+
+Dataset: Palmer Penguins\
+Fonte: Palmer Station LTER\
+Pesquisadora: Dra. Kristen Gorman\
+Período: 2007-2009
+:::

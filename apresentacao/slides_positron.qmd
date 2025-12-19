@@ -1,0 +1,415 @@
+---
+title: "Positron IDE"
+subtitle: "A nova IDE da Posit"
+format:
+  revealjs:
+    theme: serif
+    logo: logo.png
+    footer: "R-Ladies Goiânia | Curso Positron IDE"
+    slide-number: true
+    incremental: false
+    transition: fade
+    background-transition: fade
+    preview-links: auto
+    css: styles.css
+---
+
+## Bem-vindas(os)
+
+**`R-Ladies Goiânia`**
+
+![](imagens/Quadro%20Feed%20Instagram%20(1).gif){fig-align="center" width="465"}
+
+------------------------------------------------------------------------
+
+## O que é Positron?
+
+✔️ IDE (Ambiente de desenvolvimento) VOLTADA a **`ciência de dados`** de última geração, desenvolvida para **`Python`** e **`R`**.
+
+✔️ Ele combina o poder de uma **`IDE`** completa com ferramentas interativas de ciência de dados para Python e R.
+
+![](imagens/logo_positrob.png){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="552"}
+
+## Por que Positron existe?
+
+::: incremental
+-   Evolução natural do ecossistema Posit
+
+-   Suporte nativo para **`Python`**
+
+-   Interface moderna e performática
+
+-   VS Code (um fork do Code OSS)
+
+    ::: {.callout-tip style="border-left:6px solid #88398a; background-color:#F7F2EE; box-shadow:0 2px 6px rgba(34,69,115,0.15); border-radius:10px; padding:1.2em 1.5em;"}
+    \
+    Você usa o **`RStudio`** e deseja mais recursos para personalizar ou estender seu ambiente de desenvolvimento integrado (IDE)?
+    :::
+:::
+
+------------------------------------------------------------------------
+
+## Funcionalidades exclusivas do Positron {.smaller}
+
+Algumas funcionalidades estão disponíveis no Positron, mas não no RStudio:
+
+-   **Acesso fácil a múltiplas versões do R** e **múltiplas sessões simultâneas**
+
+-   **Assistente de IA integrado** que pode "ver" e executar código em suas sessões ativas de R (ou Python)
+
+-   **Python como linguagem de primeira classe** com suporte para fluxos de trabalho de ciência de dados em pé de igualdade com o R
+
+-   **Suporte para outras linguagens** além de R e Python, por meio de inteligência de linguagem integrada ou extensões
+
+-   **Explorador de dados integrado** para dataframes em suas sessões ativas e para diversos tipos de arquivos de dados (CSV, Parquet, etc.)
+
+-   **Extensibilidade através de um amplo mercado de extensões** de terceiros
+
+-   **Sessões remotas** - interface local com processamento computacional em outro local
+
+## Agenda do curso
+
+::::: columns
+::: {.column width="50%"}
+### Fundamentos
+
+-   **`Interface`** e componentes
+-   **`Atalhos`** essenciais
+-   **`Projetos`** no Positron
+:::
+
+::: {.column width="50%"}
+### Prática
+
+-   Instalação
+-   Atalhos
+-   Manipulação
+-   Visualizações
+-   Quarto - relatórios
+:::
+:::::
+
+# Tour pela interface do usuário {.center background-color="#d8b5d0"}
+
+------------------------------------------------------------------------
+
+## Layout Principal
+
+> Você escreve o código em um **`editor`**, executa o código no **`Console`** e visualiza os resultados, como gráficos, variáveis ​​e relatórios, em **painéis ou guias dedicados**.
+
+![](imagens/user-interface-rstudio-vs-positron.jpeg){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="633"}
+
+## Layout Principal
+
+[![Fonte: Posit. Interface do Positron IDE mostrando as barras, o editor, o painel.](imagens/user-interface-for-rstudio-migration.jpeg){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center"}](https://positron.posit.co/welcome.html)
+
+## Atalhos do teclado: RStudio no Positron
+
+-   Muitos atalhos familiares funcionarão imediatamente, pois já estão integrados ao Positron e ao seu suporte integrado ao R.
+
+> Eles podem ser ativados:
+>
+> -   **`workbench.keybindings.rstudioKeybindings`**
+>
+> -   **Reinicie o Positron após alterar essa configuração.**
+
+-   Consulte a lista completa de atalhos do RStudio - Positron [**`aqui`**](https://positron.posit.co/migrate-rstudio-keybindings.html).
+
+-   Consulte a lista completa de atalhos do - Positron [**`aqui`**](https://positron.posit.co/keyboard-shortcuts.html)**.**
+
+::: callout-tip
+**Criamos uma lista dos principais atalhos, confira na pasta do projeto:**
+
+**atalhos** \> **`atalhos_positron.qmd`**
+:::
+
+## Atalhos principais - Parte1
+
+| Comando | Windows/Linux | Mac | Descrição |
+|------------------|------------------|------------------|------------------|
+| **Executar código** | `Ctrl + Enter` | `Cmd + Enter` | Executa linha ou seleção |
+| **Command Palette** | `Ctrl + Shift + P` | `Cmd + Shift + P` | Abre paleta de todos comandos |
+| **Buscar arquivos** | `Ctrl + P` | `Cmd + P` | Busca rápida de arquivos no projeto |
+
+------------------------------------------------------------------------
+
+## Atalhos Quarto e edição - Parte2
+
+| Comando | Windows/Linux | Mac | Descrição |
+|------------------|------------------|------------------|------------------|
+| **Renderizar Quarto** | `Ctrl + Shift + K` | `Cmd + Shift + K` | Renderiza documento .qmd |
+| **Inserir chunk** | `Ctrl + Alt + I` | `Cmd + Option + I` | Insere novo chunk de código |
+| **Comentar linha** | `Ctrl + Shift + C` | `Cmd + /` | Comenta ou descomenta código |
+
+## Tabela 3: Produtividade e Console - Parte2
+
+| Comando | Windows/Linux | Mac | Descrição |
+|------------------|-------------------|------------------|------------------|
+| **Executar chunk completo** | `Ctrl + Shift + Enter` | `Cmd + Shift + Enter` | Executa todo o bloco de código |
+| **Focar no console** | `Ctrl + 2` | `Cmd + 2` | Move foco para o console |
+| **Limpar console** | `Ctrl + L` | `Cmd + L` | Limpa saída do console |
+
+## Barras de ação
+
+O Positron utiliza **`barras de ação`** em todo o aplicativo para colocar funcionalidades essenciais ao seu alcance.
+
+![Fonte: Posit. Barras de ação.](imagens/action-bars.png){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="627"}
+
+## Barras de ação - Elementos
+
+![Fonte: Posit. Elementos das barras de ação.](imagens/elementos.JPG){fig-align="center" style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" width="555"}
+
+## Painel de ajuda
+
+```         
+?tidyverse
+# or
+help(tidyverse)
+```
+
+### Via painel
+
+![Help-me Positron!!](imagens/help.JPG){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="475"}
+
+# Prática 1: Instalação {.center background-color="#224573"}
+
+## Prática 1: Pré-requisitos
+
+1.  Certifique-se de ter o **`R ​​4.2` ou superior instalado**. Instruções para seu [**sistema operacional**.](https://cloud.r-project.org/)
+2.  Para baixar o Positron clique [**aqui**](https://positron.posit.co/install.html).
+
+> Se você usa Windows, observe que o Positron não inclui [**o Rtools**](https://cran.r-project.org/bin/windows/Rtools/) atualmente .
+
+<br>
+
+![](imagens/download.JPG){fig-align="center" style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" width="592" height="337"}
+
+# Prática 2: Ambientação {.center background-color="#224573"}
+
+Vamos conhecer o Positron?
+
+## Prática 2: Etapas
+
+### **Layout Principal \| Atalhos \|**
+
+-   [ ] Activity bar
+
+-   [ ] Primary side bar
+
+-   [ ] Editor
+
+-   [ ] Panel
+
+-   [ ] Secondary side bar
+
+-   [ ] Barras de ação e seus elementos
+
+-   [ ] Painel de ajuda
+
+# Como trabalhar com Projetos no Positron? {.center background-color="#d8b5d0"}
+
+## Como trabalhamos no RSTudio?
+
+![](imagens/new-project.png){fig-align="center" style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" width="471"}
+
+## Como trabalhamos no RSTudio?
+
+![](imagens/primeiro%20projeto.png){fig-align="center" style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" width="511"}
+
+## No Positron
+
+1.  **New Folder from Template**
+
+2.  **Open Folder**
+
+3.  **New Folder from git**
+
+-   No VS Code e, portanto, no Positron, as palavras "pasta", "espaço de trabalho" e "projeto" são usadas quase como sinônimos, pois a forma mais comum de trabalhar é em um espaço de trabalho de pasta única.
+
+-   **Um arquivo Rproj pode permanecer em um projeto sem problemas, portanto** não há necessidade de removê-lo ativamente.
+
+## Modelos de pastas - **`New Folder from Template`**
+
+### Opção 1 - Barra file
+
+-   O recurso "**`New Folder from Template`**" ajuda você a iniciar novos projetos mais rapidamente.
+
+![Solicitação pelo menu file na barra superior, canto esquerdo.](imagens/projeto1.png){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="570"}
+
+## Modelos de pastas - **`New Folder from Template`**
+
+### Opção 1 - Welcome
+
+![](imagens/projeto2.JPG){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="437"}
+
+![](imagens/new_folder.JPG){fig-align="center" style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" width="448"}
+
+## Modelos de pastas - `Open Folder`
+
+Neste caso você já tem **uma pasta com os arquivos do seu projeto**.
+
+![](imagens/folder.JPG){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="586"}
+
+## Modelos de pastas - `New Folder from git`
+
+-   **Clonando** o repositório do **`GitHub`**
+
+![](imagens/git.JPG){fig-align="center" style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" width="597"}
+
+# Prática 3: Criando um projeto {.center background-color="#224573"}
+
+## Prática 3: Etapas
+
+-   [ ] Criar um projeto a partir de - **`New Folder from Template`**
+-   [ ] Criar um projeto a partir de - **`Open Folder`**
+-   [ ] Criar um projeto a partir de - **`New Folder from git`**
+-   [ ] Crie novas pastas
+-   [ ] Movimente arquivos
+
+# Análise de dados {.center background-color="#d8b5d0"}
+
+## Explorador de dados
+
+![](imagens/explorador.png){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="715"}
+
+## Explorador de dados
+
+O **Explorador de Dado**s foi projetado para complementar a exploração de dados baseada em código, permitindo:
+
+1.  **Visualização dados em uma grade semelhante a uma planilha.**
+
+2.  **Filtragem e classificação** de dados temporariamente e **estatísticas resumidas** úteis diretamente no Positron. 
+
+::: callout-tip
+Pode ser usado para visualizar arquivos de dados brutos (CSV, Parquet, etc.) em seu espaço de trabalho do Positron, bem como dataframes em suas sessões ativas de Python ou R.
+:::
+
+## Explorador de dados
+
+**O Explorador de Dados possui três componentes principais:**
+
+1.  [**Grade de dados**](https://positron.posit.co/data-explorer-data-grid.html) **:** Exibição em formato de planilha das células e colunas individuais.
+
+2.  [**Painel de resumo**](https://positron.posit.co/data-explorer-summary-panel.html) **:** Estatísticas resumidas para cada coluna no conjunto de dados.
+
+3.  [**Barra de filtros**](https://positron.posit.co/data-explorer-filter-bar.html) **:** Filtros temporários para colunas específicas
+
+<br>
+
+**Use a função `view()` para abrir:**
+
+```{r}
+#| echo: true
+#| eval: false
+
+df |> mutate(doubled_column = column * 2) |> View()
+```
+
+## Painel de variáveis e conexões
+
+-   O painel Variáveis ​​permite visualizar as variáveis ​​da sua sessão Python ou R e, por padrão, está localizado na barra lateral secundária.
+
+-   Além das variáveis, quando aplicável, exibe tabelas de dados e quaisquer [conexões](https://positron.posit.co/connections-pane.html) abertas para sua sessão.
+
+![](imagens/variables-pane.png){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="646"}
+
+# Prática 4: Análise de dados {.center background-color="#224573"}
+
+## Prática 4: Etapas
+
+-   [ ] Abrir nosso projeto - via **`Open Folder`**
+-   [ ] Novo script
+-   [ ] Instalar e carregar os pacotes
+-   [ ] Importar dados
+-   [ ] Visualizar as variáveis - Painel de variáveis
+-   [ ] Explorar os dados - Grande de dados
+-   [ ] Explorar os dados - Painel de resumos
+-   [ ] Explorar os dados - Barra de filtros
+-   [ ] Visualização gráfica
+-   [ ] Solicitar novo documento em quarto e renderizar
+
+## Extensões
+
+-   Como o Positron é baseado no [Code OSS](https://github.com/microsoft/vscode) (o núcleo de código aberto do VS Code), você pode usar extensões do VS Code no Positron. As extensões instaladas para o Positron são *independentes* das extensões instaladas para o VS Code e não interferem umas nas outras.
+
+-   O Positron possui uma visualização de extensões -  [Open VSX](https://open-vsx.org/) , um projeto de código aberto.
+
+    > A Posit é uma das principais patrocinadoras do Open VSX.
+
+![A extensão Air da Posit exibe o selo de Editor Verificado “Posit Software, PBC” e “lionel-”, o desenvolvedor da Posit que publicou a extensão.](imagens/extension-verified-publisher.png){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="632"}
+
+## Extensões
+
+### Como saber se estão instaladas? Como desinstalar?
+
+![](imagens/EXTENSOES.png){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center"}
+
+## Extensões recomendadas \| Bootstrap
+
+:::: columns
+::: {.column width="50%"}
+### Essenciais para R
+
+-   **R Extension**
+-   **Quarto**
+-   **Shiny**
+-   **GitHub**
+:::
+::::
+
+::: {.callout-tip style="border-left:6px solid #88398a; background-color:#F7F2EE; box-shadow:0 2px 6px rgba(34,69,115,0.15); border-radius:10px; padding:1.2em 1.5em;"}
+Acesse as extensões via **`Ctrl+Shift+X`** (Windows/Linux) ou **`Cmd+Shift+X`** (Mac)
+:::
+
+## Extensões instalação
+
+### **Vamos fazer juntos?**
+
+-   Menu **Extensions** \> digite \> **`Portuguese - Code Spell Checker`**
+
+[![](imagens/extencao_exemplo.JPG){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="546"}](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese)
+
+## Migrando do RStudio
+
+1.  Acesse o guia de migração [**aqui**](https://positron.posit.co/migrate-rstudio.html).
+2.  [**Atalhos**](https://positron.posit.co/migrate-rstudio-keybindings.html) de teclado do RStudio.
+3.  Configurações e [**extensões**](https://positron.posit.co/migrate-rstudio-settings-and-extensions.html).
+4.  O arquivo [**Rproj**](https://positron.posit.co/migrate-rstudio-rproj.html).
+5.  [**Comparando**](https://positron.posit.co/migrate-rstudio-compare.html) os recursos do RStudio e do Positron
+6.  Acesse o [**The Posit Blog**](https://posit.co/blog/?post_tag=positron) para novidades e tutoriais.
+
+::: {.callout-tip style="border-left:6px solid #88398a; background-color:#F7F2EE; box-shadow:0 2px 6px rgba(34,69,115,0.15); border-radius:10px; padding:1.2em 1.5em;"}
+Seus pacotes e bibliotecas R continuam funcionando normalmente. Não é necessário reinstalar.
+:::
+
+------------------------------------------------------------------------
+
+## Dica importante! 💡
+
+::: callout-tip
+## Não é tudo ou nada
+
+Vale ressaltar que usar o Positron **não é uma decisão de tudo ou nada**.
+
+É perfeitamente razoável:
+
+-   Usar o Positron em alguns projetos e o RStudio em outros
+-   Dentro de um projeto específico, algumas tarefas podem parecer mais fáceis no Positron e outras no RStudio
+-   **Não há nada de irreversível ou excludente** na interação com os arquivos que compõem um projeto a partir de uma IDE em vez de outra
+:::
+
+::: fragment
+**Escolha a ferramenta que melhor se adapta ao seu fluxo de trabalho!**
+:::
+
+## Acesse nossas redes
+
+### Faça parte dessa história!
+
+Clique [**aqui**](https://linktr.ee/rladiesgoiania).
+
+[![](imagens/redes.JPG){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="531"}](https://linktr.ee/rladiesgoiania)
+
+# Muito obrigada pela sua atenção! {.center background-color="#d8b5d0"}
+
+![](imagens/Quadro Feed Instagram (1).gif){fig-align="center" width="267"}
