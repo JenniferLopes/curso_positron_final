@@ -220,7 +220,7 @@ footer {
 
 /* Tamanho geral da fonte dos slides */
 .reveal {
-  font-size: 2.0em !important;   /* ajuste principal */
+  font-size: 1.8em !important;   /* ajuste principal */
   line-height: 1.3 !important;
 }
 

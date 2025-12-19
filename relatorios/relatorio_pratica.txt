@@ -160,5 +160,5 @@ penguins |>
 Dataset: Palmer Penguins\
 Fonte: Palmer Station LTER\
 Pesquisadora: Dra. Kristen Gorman\
-Período: 2007-2009
+Período: 2007-200
 :::

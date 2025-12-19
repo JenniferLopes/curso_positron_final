@@ -1,0 +1,99 @@
+---
+title: "Um pé no R, outro no Python: integração via reticulate"
+author: "R-Ladies Goiânia"
+date: today
+format:
+  html:
+    theme: cosmo
+    toc: true
+    code-fold: true
+    code-summary: "Ver código"
+    css: styles.css
+editor: visual
+---
+
+
+```{r}
+library(pacman)
+pacman::p_load(
+  reticulate,  # Integração R–Python
+  tidyverse)
+```
+
+# Instalação de pacotes via reticulate
+```{r}
+# reticulate::py_install(c("numpy", "pandas"))
+```
+
+# Verificação de pacotes instalados
+
+```{r}
+reticulate::py_require("numpy")
+reticulate::py_require("numpy")
+```
+
+# Listagem de pacotes Python instalados
+
+```{r}
+reticulate::py_list_packages()
+```
+
+# Verificação de disponibilidade de pacotes Python = library() no R
+
+```{r}
+reticulate::py_module_available("pandas")
+reticulate::py_module_available("numpy")
+```
+
+# importação via python
+
+```{python}
+import pandas as pd
+penguins_py = pd.read_csv("dados/penguins.csv")
+```
+
+# Resumo estatistico python
+
+```{python}
+penguins_py.describe()
+
+resumo_1 = penguins_py.describe()
+```
+
+# Exibir resumo estatístico no R
+
+```{r}
+resumo_1r <- py$resumo_1
+```
+
+# Manipulação no Python
+```{python}
+peso_por_especie = (
+    penguins_py
+        .groupby("species")
+        .agg(
+            peso_medio=("body_mass_g", "mean"),
+            n_pinguins=("body_mass_g", "count"))
+        .reset_index()
+        .sort_values(by="peso_medio", ascending=False))
+
+peso_por_especie
+```
+
+# Levando os dados para o R
+```{r}
+peso_por_especie_r <- py$peso_por_especie
+```
+
+# Visualização no R
+
+```{r}
+ggplot(peso_por_especie_r, aes(x = species, y = peso_medio)) +
+  geom_col() +
+  labs(
+    title = "Peso médio por espécie de pinguim",
+    x = "Espécie",
+    y = "Peso médio (g)")+
+      labs(caption="R-Ladies Goiânia, 2025.")+
+      theme_classic()
+```

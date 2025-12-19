@@ -82,10 +82,13 @@ Algumas funcionalidades estão disponíveis no Positron, mas não no RStudio:
 ### Prática
 
 -   Instalação
+-   Ambientação
 -   Atalhos
--   Manipulação
+-   Manipulação \| Exploração dados
 -   Visualizações
 -   Quarto - relatórios
+-   Extensões
+-   Um pé no **`Python`** e outro no **`R`**
 :::
 :::::
 
@@ -126,7 +129,7 @@ Algumas funcionalidades estão disponíveis no Positron, mas não no RStudio:
 ## Atalhos principais - Parte1
 
 | Comando | Windows/Linux | Mac | Descrição |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | **Executar código** | `Ctrl + Enter` | `Cmd + Enter` | Executa linha ou seleção |
 | **Command Palette** | `Ctrl + Shift + P` | `Cmd + Shift + P` | Abre paleta de todos comandos |
 | **Buscar arquivos** | `Ctrl + P` | `Cmd + P` | Busca rápida de arquivos no projeto |
@@ -136,7 +139,7 @@ Algumas funcionalidades estão disponíveis no Positron, mas não no RStudio:
 ## Atalhos Quarto e edição - Parte2
 
 | Comando | Windows/Linux | Mac | Descrição |
-|------------------|------------------|------------------|------------------|
+|----|----|----|----|
 | **Renderizar Quarto** | `Ctrl + Shift + K` | `Cmd + Shift + K` | Renderiza documento .qmd |
 | **Inserir chunk** | `Ctrl + Alt + I` | `Cmd + Option + I` | Insere novo chunk de código |
 | **Comentar linha** | `Ctrl + Shift + C` | `Cmd + /` | Comenta ou descomenta código |
@@ -369,6 +372,20 @@ Acesse as extensões via **`Ctrl+Shift+X`** (Windows/Linux) ou **`Cmd+Shift+X`**
 
 [![](imagens/extencao_exemplo.JPG){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="546"}](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-portuguese)
 
+# NÃO ACABOU🤭 {.center background-color="#224573"}
+
+![Pacote Reticulate salva vidas!](imagens/python.JPG){style="border:3px solid #88398a; border-radius:10px; box-shadow:0 0 10px rgba(34,69,115,0.3);" fig-align="center" width="413" height="197"}
+
+## Prática 5: Um pé no R e outro no Python
+
+-   [ ] **`install.packages ("reticulate")`**
+-   [ ] **`library (reticulate)`**
+-   [ ] Vamos alternar os ambientes - **`Python (reticulate)`**
+
+::: callout-tip
+Para aprofundar, consulte a documentação do pacote [**`reticulate`**](https://rstudio.github.io/reticulate/).
+:::
+
 ## Migrando do RStudio
 
 1.  Acesse o guia de migração [**aqui**](https://positron.posit.co/migrate-rstudio.html).
@@ -412,4 +429,4 @@ Clique [**aqui**](https://linktr.ee/rladiesgoiania).
 
 # Muito obrigada pela sua atenção! {.center background-color="#d8b5d0"}
 
-![](imagens/Quadro Feed Instagram (1).gif){fig-align="center" width="267"}
+![](imagens/Quadro%20Feed%20Instagram%20(1).gif){fig-align="center" width="267"}

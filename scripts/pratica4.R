@@ -3,10 +3,10 @@
 # ==============================================================================
 # Curso: Positron IDE - R-Ladies Goiânia
 # Dataset: Palmer Penguins
-# 
+
 # HISTÓRIA: Entre 2007 e 2009, a Dra. Kristen Gorman e sua equipe estudaram
 # três espécies de pinguins em ilhas da Antártica.
-# 
+
 # PERGUNTA CENTRAL: Será que conseguimos distinguir as espécies apenas 
 # observando suas medidas corporais?
 # ==============================================================================
@@ -18,6 +18,7 @@
 # Instalar pacotes (rode apenas uma vez!)
 install.packages("tidyverse")
 
+
 # Carregar pacotes
 library(tidyverse)
 
@@ -27,7 +28,6 @@ library(tidyverse)
 # Importar dados do pacote palmerpenguins
 penguins <- read.csv("dados/penguins.csv")
 
-
 # Visualizar no Data Explorer do Positron (DESTAQUE!)
 View(penguins)
 
@@ -35,6 +35,17 @@ View(penguins)
 # - Clique nos cabeçalhos para ordenar
 # - Use a barra de filtros
 # - Veja estatísticas no painel lateral
+
+# Filtro inicial
+
+library(dplyr)
+
+filtro_inicial<- penguins |>
+  filter(
+    grepl("Adelie", species, fixed = TRUE),
+    grepl("Biscoe", island, fixed = TRUE),
+    bill_length_mm >= 32 & bill_length_mm <= 42,
+    year == 2007)
 
 # Visão geral
 glimpse(penguins)
@@ -130,7 +141,7 @@ penguins |>
 # ------------------------------------------------------------------------------
 
 # Salvar análise resumida
-write.csv(peso_por_especie, "peso_por_especie.csv", row.names = FALSE)
+write.csv(peso_por_especie, "outputs/peso_por_especie.csv", row.names = FALSE)
 
 # Salvar dataset completo
 write.csv(penguins, "outputs/penguins_teste.csv", row.names = FALSE)
